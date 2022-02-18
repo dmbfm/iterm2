@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol PSMMinimalTabStyleDelegate<NSObject>
 - (NSColor *)minimalTabStyleBackgroundColor;
+- (NSColor *)minimalTabStyleForegroundColor;
 @end
 
 @interface PSMMinimalTabStyle : PSMYosemiteTabStyle

@@ -88,6 +88,19 @@ static CGFloat PSMWeightedAverage(CGFloat l, CGFloat u, CGFloat w) {
 }
 
 - (NSColor *)textColorDefaultSelected:(BOOL)selected backgroundColor:(NSColor *)backgroundColor windowIsMainAndAppIsActive:(BOOL)mainAndActive {
+    //return [self.delegate minimalTabStyleForegroundColor];
+    //return [NSColor colorWithRed:0 green:0 blue:1 alpha:1];
+    
+    NSColor *fg = [self.delegate minimalTabStyleForegroundColor];
+    
+    CGFloat h, s, b, a;
+    
+    [fg getHue:&h saturation:&s brightness:&b alpha:&a];
+    
+    b = selected ? b : 0.6 * b;
+    
+    return [NSColor colorWithHue:h saturation:s brightness:b alpha:a];
+    
     const CGFloat backgroundBrightness =
     (backgroundColor ?
      backgroundColor.it_hspBrightness :

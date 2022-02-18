@@ -11456,6 +11456,10 @@ backgroundColor:(NSColor *)backgroundColor {
     return [self.currentSession.screen.colorMap colorForKey:kColorMapBackground];
 }
 
+- (NSColor *)minimalTabStyleForegroundColor {
+    return [self.currentSession.screen.colorMap colorForKey:kColorMapForeground];
+}
+
 #pragma mark - iTermBroadcastInputHelperDelegate
 
 - (NSArray<NSString *> *)broadcastInputHelperSessionsInCurrentTab:(iTermBroadcastInputHelper *)helper
